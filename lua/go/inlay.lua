@@ -292,12 +292,12 @@ function M.disable_inlay_hints(update, bufnr)
   if inlay_display then
     -- disable inlay hints
     vim.lsp.inlay_hint.enable(bufnr, false)
-    enabled[tostring(bufnr)] = false
+    -- enabled[tostring(bufnr)] = false
     return
   end
   -- clear namespace which clears the virtual text as well
   vim.api.nvim_buf_clear_namespace(0, namespace, 0, -1)
-  enabled[tostring(bufnr)] = false
+  -- enabled[tostring(bufnr)] = false
 
   if update then
     local fname = fn.expand('%:p')
